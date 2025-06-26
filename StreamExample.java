@@ -6,6 +6,8 @@ public class StreamExample {
     public static void main (String[] args){
         String str = "mounaaa";
         String str1 = "dolly";
+        String st = "cnndbkjfweigjwifhfcg";
+        StreamExample.withoutUsingStream(st);
         List<String> a = Arrays.asList("mounaaa","dolly","mounaaa","mounaaa","dolly","smiley","simplesmileymouna","sareebeauty");
             int count = 0;
             int count1 = 0;
@@ -42,6 +44,23 @@ public class StreamExample {
         String st = new StringBuilder(m).reverse().toString();
         System.out.println(st);
 
+    }
+
+
+
+    public static void withoutUsingStream(String t ){
+        Map<Character,Integer> map = new HashMap<>();
+        char[] ch =t.toCharArray();
+        for(int i = 0; i<ch.length; i++){
+            int count = 0;
+            for(int j = 0; j<ch.length; j++){
+                if(ch[i]==ch[j]){
+                    count++;
+                }
+            }
+            map.put(ch[i] ,count);
+        }
+        System.out.println(map);
     }
 
 
